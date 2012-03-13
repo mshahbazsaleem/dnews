@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>RSS Driven Dynamic jQuery News Slider Plugin</title>
+    <script type="text/javascript" src="https://www.google.com/jsapi?key=ABQIAAAAzU5E6W-kYkDWncD-gLlvEhRUEaat57mcPuL2sxLOgiGfdu1dyxRm8B-okEsXk6nmXsYNVPSFoKIYxA"></script>
+    <script src="jquery-1.4.4.min.js" type="text/javascript"></script>
+    <script src="dnews.js" type="text/javascript"></script>
+    <link href="dnews.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+        google.load("feeds", "1");
+        $(document).ready(function () {
+            $('#snews').dnews({ feedurl: 'http://www.dawn.com/rss', showdetail: true, controlsalwaysvisible: true, entries: 10, controls: true, target: "_blank" });
+        });
+    </script>
+    <style type="text/css">
+        #container
+        {
+            width: 800px;
+            top: 200px;
+            margin: auto;
+        }
+        .demo
+        {
+            position: relative;
+            margin-top: 100px;
+        }
+      
+    </style>
+</head>
+<body>  
+    <div id="container">
+        <div class="demo">
+            <div class="news-wrapper" id="snews">
+                <div class="news">
+                    <div class="headline">
+                        <a href="#" title="TOKYO: Workers at Japan’s stricken nuclear plant on Thursday pumped nitrogen into a crippled reactor in a bid to prevent a possible explosion and contain the world’s worst atomic accident for 25 years. With the crisis at the ">
+                            Japan using gas to avoid explosion at nuclear plant.</a>
+                    </div>
+                    <div class="headline">
+                        <a href="#" title="'ASK a Stupid Question Day' is a holiday and celebrated in the United States schools. The day falls on Sept 28, but practically it is observed on the last school day each year. Dating way back to 1980s, this day is a regular feature in ">
+                            Of stupid questions and the significance of census.</a>
+                    </div>
+                    <div class="headline">
+                        <a href="#" title="Archaeologists are unearthing a 2,000-year-old tunnel at Teotihuacan, the largest pyramid structures built in the pre-Columbian era, in the Basin of Mexico, searching for clues to the region’s most influential former ancient">
+                            Digging deep into Teotihuacan’s mystery.</a>
+                    </div>
+                    <div class="headline">
+                        <a href="#" title="Archaeologists are unearthing a 2,000-year-old tunnel at Teotihuacan, the largest pyramid structures built in the pre-Columbian era, in the Basin of Mexico, searching for clues to the region’s most influential former ancient">
+                            fourth deep into Teotihuacan’s mystery.</a>
+                    </div>
+                    <div class="headline">
+                        <a href="#" title="Archaeologists are unearthing a 2,000-year-old tunnel at Teotihuacan, the largest pyramid structures built in the pre-Columbian era, in the Basin of Mexico, searching for clues to the region’s most influential former ancient">
+                            Fifth deep into Teotihuacan’s mystery.</a>
+                    </div>
+                    <div class="headline">
+                        <a href="#" title="Archaeologists are unearthing a 2,000-year-old tunnel at Teotihuacan, the largest pyramid structures built in the pre-Columbian era, in the Basin of Mexico, searching for clues to the region’s most influential former ancient">
+                            Sixth deep into Teotihuacan’s mystery.</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
