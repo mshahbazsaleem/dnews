@@ -9,7 +9,8 @@
                 moretext: '[...]',
                 controlsalwaysvisible: true,
                 entries: 10,
-                target : ""
+                target : "",
+				headlineLength:80
             }, options);
             return this.each(function() {
                 var direction = "forward";
@@ -82,8 +83,8 @@
                             allNews.each(function(index, news) {
                                 id++;
                                 var headlintext = $(news).find('title').text();
-                                if (headlintext.length > 100)
-                                    headlintext = headlintext.substr(0, 100) + ' ...';
+                                if (headlintext.length > settings.headlineLength)
+                                    headlintext = headlintext.substr(0, settings.headlineLength) + ' ...';
                                 var headline = $('<div/>').addClass('headline').append($('<a/>').attr('id', id).html(headlintext).attr('target',settings.target).attr('href', $(news).find('link').text()));
                                 descriptions.push($(news).find('description').text());
                                 $('.news', wrapper).append(headline);
