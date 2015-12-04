@@ -2,14 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>RSS Driven Dynamic jQuery News Slider Plugin</title>
-    <script type="text/javascript" src="https://www.google.com/jsapi?key=ABQIAAAAzU5E6W-kYkDWncD-gLlvEhRUEaat57mcPuL2sxLOgiGfdu1dyxRm8B-okEsXk6nmXsYNVPSFoKIYxA"></script>
-    <script src="jquery-1.4.4.min.js" type="text/javascript"></script>
+    <script src="jquery-1.11.3.min.js" type="text/javascript"></script>
     <script src="dnews.js" type="text/javascript"></script>
     <link href="dnews.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript">
-        google.load("feeds", "1");
         $(document).ready(function () {
-            $('#snews').dnews({ feedurl: 'http://www.dawn.com/rss', showdetail: true, controlsalwaysvisible: true, entries: 10, controls: true, target: "_blank" });
+            $('#snews').dnews({ feedurl: 'http://q13fox.com/feed/', showdetail: true, controlsalwaysvisible: true, entries: 10, controls: true, target: "_blank" });
         });
     </script>
     <style type="text/css">
@@ -24,10 +22,10 @@
             position: relative;
             margin-top: 100px;
         }
-      
+
     </style>
 </head>
-<body>  
+<body>
     <div id="container">
         <div class="demo">
             <div class="news-wrapper" id="snews">
