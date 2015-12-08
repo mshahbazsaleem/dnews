@@ -66,17 +66,22 @@
                 var descriptions = new Array();
                 //build news headlines from feed
                 if (settings.feedurl != '') {
+                    var YQL = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20rss%20where%20url%3D";
+                    var feedloc = encodeURIComponent(settings.feedurl);
                     $('.news', wrapper).html('<img src="loading.gif" alt="loading" style="margin-top:6px;margin-left:6px;"/>');
-                    google.setOnLoadCallback(function OnLoad() {
-                        var feed = new google.feeds.Feed(settings.feedurl);
-                        feed.setNumEntries(settings.entries);
-                        feed.setResultFormat(google.feeds.Feed.XML_FORMAT);
-                        feed.load(feedLoaded);
-                    });
+                    var xmlhttp = new XMLHttpRequest();
+                    xmlhttp.onreadystatechange = function() {
+                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                            var feedXML = $.parseXML(xmlhttp.responseText);
+                            feedLoaded(feedXML);
+                        }
+                    };
+                    xmlhttp.open("GET", YQL + "'" + feedloc + "'");
+                    xmlhttp.send();
                     function feedLoaded(result) {
                         if (!result.error) {
                             $('.news', wrapper).html('');
-                            var chanels = $(result.xmlDocument).find('channel');
+                            var chanels = $(result).find('results');
                             var newsHome = $('>link', chanels).text();
                             var newsDate = chanels.find('lastBuildDate').text();
                             var allNews = chanels.find('item');
